@@ -46,5 +46,4 @@ export const App: React.FC = () => {
     </ThemeProvider>
   );
 };
-
 export default App;
