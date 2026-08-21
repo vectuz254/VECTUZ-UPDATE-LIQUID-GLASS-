@@ -23,3 +23,25 @@ export const App: React.FC = () => {
       el.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  if (loading) {
+    return <RubiksLoader onLoaded={() => setLoading(false)} />;
+  }
+
+  return (
+    <ThemeProvider>
+      <Navbar onOpenBooking={() => scrollToSection('contact')} />
+      <HeroSection />
+      <ServicesSection />
+      <PricingSection onSelectTier={setActiveMpesaTier} />
+      <SocialProofSection />
+      <GrowthSection />
+      <FAQSection />
+      <ContactCheckoutSection />
+      <Footer />
+      <MpesaModal tier={activeMpesaTier} onClose={() => setActiveMpesaTier(null)} />
+    </ThemeProvider>
+  );
+};
+
+export default App;
