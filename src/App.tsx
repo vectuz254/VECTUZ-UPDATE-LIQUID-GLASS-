@@ -31,9 +31,12 @@ export const App: React.FC = () => {
   return (
     <ThemeProvider>
       <Navbar onOpenBooking={() => scrollToSection('contact')} />
-      <HeroSection />
+      <HeroSection
+        onBookCall={() => scrollToSection('contact')}
+        onViewPricing={() => scrollToSection('pricing')}
+      />
       <ServicesSection />
-      <PricingSection onSelectTier={setActiveMpesaTier} />
+      <PricingSection onSelectMpesaTier={(tier) => setActiveMpesaTier(tier)} />
       <SocialProofSection />
       <GrowthSection />
       <FAQSection />
@@ -42,6 +45,3 @@ export const App: React.FC = () => {
       <MpesaModal tier={activeMpesaTier} onClose={() => setActiveMpesaTier(null)} />
     </ThemeProvider>
   );
-};
-
-export default App;
