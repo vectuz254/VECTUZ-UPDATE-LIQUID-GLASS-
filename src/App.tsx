@@ -45,3 +45,6 @@ export const App: React.FC = () => {
       <MpesaModal tier={activeMpesaTier} onClose={() => setActiveMpesaTier(null)} />
     </ThemeProvider>
   );
+};
+
+export default App;
